@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  font-weight: 700;
+  font-size: 15px;
+  background: hsl(240, 78%, 98%);
+  color: hsl(233, 13%, 49%);
+  overflow: hidden;
+}
+/* Toggle button */
+
+input {
+  margin-left: 10px;
+  border-radius: 100px;
+  outline: none;
+  -webkit-appearance: none;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  transition: 0.5;
+}
+
+input::before {
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all ease-out;
+}
+
+input:checked:before {
+  transition-delay: 0.2s;
+  left: 22px;
+}
+
+/*  All about the styling for  buttons */
+button {
+  width: 100%;
+  margin: auto;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+.card:nth-child(1) button,
+.card:nth-child(3) button {
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.card:nth-child(1) button:hover,
+.card:nth-child(3) button:hover {
+  background: transparent;
+  border: 1px solid hsl(237, 63%, 64%);
+  color: hsl(237, 63%, 64%);
+}
+
+.card:nth-child(2) button {
+  background: #ffffff;
+  color: hsl(237, 63%, 64%);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.card:nth-child(2) button:hover {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+/* Design for the body */
+span {
+  font-size: 2rem;
+}
+
+.main-container {
+  display: grid;
+  grid-gap: 50px;
+  text-align: center;
+}
+
+header {
+  margin: 50px auto 20px;
+  color: hsl(233, 13%, 49%);
+}
+
+li {
+  display: inline;
+  margin: 20px;
+  color: hsl(234, 14%, 74%);
+}
+p {
+  border-bottom: 1px solid hsl(233, 13%, 49%);
+  padding-bottom: 5px;
+}
+
+p:nth-child(1) {
+  border-bottom: 0px;
+}
+
+.price-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto 250px;
+}
+
+.card {
+  width: 33.5%;
+  margin: auto;
+  padding: 50px;
+  display: grid;
+  grid-gap: 20px;
+  background: red;
+  border-radius: 10px;
+}
+
+.card h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.card:nth-child(1),
+.card:nth-child(3) {
+  background: white;
+  z-index: 2;
+}
+
+.card:nth-child(2) {
+  background: linear-gradient(
+    to bottom,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  color: #ffffff;
+  height: 62vh;
+}
+
+.card:nth-child(2) p {
+  border-bottom: 0.5px solid #ffffff;
+}
+.card:nth-child(2) p:nth-child(1) {
+  border-bottom: none;
+}
+/* Images */
+.topImg {
+  position: relative;
+  bottom: 170%;
+  left: 80%;
+}
+
+.bottom-img {
+  position: relative;
+  top: -250px;
+  z-index: 1;
+}
+
+@media all and (max-width: 600px) {
+  body {
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  header {
+    z-index: 2;
+  }
+
+  .price-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .card {
+    width: 100%;
+    height: 50%;
+    margin: 10px auto;
+  }
+
+  .card:nth-child(2) {
+    height: 50%;
+    z-index: 2;
+  }
+  .card:nth-child(3) {
+    margin-bottom: -650px;
+  }
+
+  .topImg {
+    bottom: 230%;
+    left: 40%;
+    z-index: 1;
+  }
+
+  .bottom-img {
+    display: none;
+  }
+}
